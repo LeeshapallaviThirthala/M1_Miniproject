@@ -1,3 +1,3 @@
 # Architecture
-behaviour diagram
-structural diagram
+#behaviour diagram
+#structural diagram
