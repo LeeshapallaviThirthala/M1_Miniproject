@@ -11,9 +11,9 @@ The units program converts quantities expressed in various systems of measuremen
 # Defining Our System 
  In the manual system of unit conversion, there is high chance of occurrence of error, and it is not user-friendly. Further, it is tedious and time consuming. Only the experts or educated person is capable of unit conversion. But, it doesn’t need any skilled person to use this Unit Converter Android app. Anybody can convert any unit to desired equivalent unit easily and accurately.
 # Steps
-Now, choose what you want to convert temperature, currency,mass etc.
-Select the input unit and output unit.
-Finally, enter the input value and get its converted equivalent unit.
+ * Now, choose what you want to convert temperature, currency,mass etc.
+* Select the input unit and output unit.
+* Finally, enter the input value and get its converted equivalent unit.
 # Advantages
  * Faster Access
  * Accurate results
