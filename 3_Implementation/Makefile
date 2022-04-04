@@ -1,52 +1,39 @@
-PROJECT_NAME = UnitConverter
+# Name of the project
+PROJ_NAME = UnitConverter
+
 
 BUILD = build
-SRC =src/main.c
-TEST_SRC = src/main.c\
-test/testing.c\
-unity/unity.c\
 
-TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
+# All source code files
+SRC =Mainprogram.c\
+UnitConverterOperations.c
 
-
-INC	= -Iinc\
--Iunity\
-
-#Library Inlcudes
-#INCLUDE_LIBS = 
-INCLUDE_LIBS = -lcunit
-
-
-PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME).out
-
-DOCUMENTATION_OUTPUT = documentation/html
-
-
-$(PROJECT_NAME):all
-
-
+#project output
+PROJECT_OUTPUT= $(BUILD)/$(PROJ_NAME)
+#def
+$(PROJ_NAME):all
+#run
 .PHONY: run clean test doc all
-
 all: $(SRC) $(BUILD)
 	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT).out
 
-
-run:$(PROJECT_NAME)
+#call
+run:$(PROJ_NAME)
 	./$(PROJECT_OUTPUT).out
 
-
-doc:
-	make -C ./documentation
-
-
+# Build and run the unit tests
 test:$(BUILD)
-	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) $(INCLUDE_LIBS)
+	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT)
 	./$(TEST_OUTPUT)
-
-
+#Coverage
+coverageCheck:$(BUILD)
+	g++ -fprofile-arcs -ftest-coverage -fPIC -O0 $(TEST_SRC) $(INC) -o $(TEST_OUTPUT)
+	./$(TEST_OUTPUT)
+ 
+# Remove all the built files, invoke by `make clean`
 clean:
 	rm -rf $(BUILD) $(DOCUMENTATION_OUTPUT)
-
-
+ 
+# Create new build folder if not present
 $(BUILD):
 	mkdir build
