@@ -5,7 +5,7 @@ PROJ_NAME = UnitConverter
 BUILD = build
 
 # All source code files
-SRC =Mainprogram.c\
+SRC =prog1.c\
 UnitConverterOperations.c
 
 #project output
